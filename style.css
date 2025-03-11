@@ -1,0 +1,28 @@
+/* Basic table styling */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders between cells collapse together */
+    border-bottom: 1px solid #dddddd;
+
+}
+
+th, td {
+    padding: 10px; /* Adds space inside cells */
+    text-align: left; /* Aligns the text to the left */
+}
+
+th {
+    background-color: #89dff5; /* Light background color for table headers */
+}
+
+table {
+    margin: 20px 0; /* Adds space around the table */
+}
+
+thead{
+    border-bottom: thin solid;
+}
+
+tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
