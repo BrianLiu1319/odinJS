@@ -5,4 +5,10 @@ button.addEventListener("click", () => {
     form_dialogue.showModal();
 })
 
-myLibrary
+const form = document.getElementById("dialog");
+
+form.addEventListener('submit', () => {
+    const formData = new FormData(form);
+
+    addBookToLibrary(formData.title, formData.author, formData.pages, formData.readStatus);
+})
