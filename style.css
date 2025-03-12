@@ -1,6 +1,9 @@
+
+
+
 /* Basic table styling */
 table {
-    width: 100%;
+    width: 50%;
     border-collapse: collapse; /* Ensures borders between cells collapse together */
     border-bottom: 1px solid #dddddd;
 

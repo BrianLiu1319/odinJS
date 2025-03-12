@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <div class="main">
@@ -23,11 +24,37 @@
             <tbody id = "library">
                 
             </tbody>
-
-
-
         </table>
     </div>
+
+    <dialog id="form_dialogue">
+        <p>Add a Book</p>
+        <form method="dialog">
+            
+            <label for="title">Title:</label> <br>
+            <input type="text" id="title" name="title"> <br>
+
+            <label for="author">Author:</label> <br>
+            <input type="text" id="author" name="author"> <br>
+
+
+            <label for="pages">Pages:</label> <br>
+            <input type="text" id="pages" name="pages"> <br>
+
+            <label for="readStatus">Read Status:</label> <br>
+            <input type="checkbox" id="readStatus" name="readStatus"> <br>
+
+            <button>OK</button>
+        </form>
+    </dialog>
+
+    <p>
+        <button id="showDialogue">Add Book</button>
+    </p>
+
+
     <script src="test.js"></script>
+    <script src="dialogue.js"></script>
+
 </body>
 </html>
