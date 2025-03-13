@@ -10,7 +10,7 @@ table {
 }
 
 th, td {
-    padding: 10px; /* Adds space inside cells */
+    padding: 20px; /* Adds space inside cells */
     text-align: left; /* Aligns the text to the left */
 }
 
@@ -28,4 +28,9 @@ thead{
 
 tbody tr:nth-of-type(even){
     background-color: #f3f3f3;
+}
+
+
+img {
+    width: 30px;
 }

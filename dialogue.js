@@ -7,8 +7,19 @@ button.addEventListener("click", () => {
 
 const form = document.getElementById("dialog");
 
-form.addEventListener('submit', () => {
-    const formData = new FormData(form);
 
-    addBookToLibrary(formData.title, formData.author, formData.pages, formData.readStatus);
+
+form.addEventListener('submit', () => {
+    const titleInput = document.getElementById('title');
+    const authorInput = document.getElementById('author');
+    const pagesInput = document.getElementById('pages');
+    const readStatusInput = document.getElementById('readStatus');
+
+    const titleValue = titleInput.value;
+    const authorValue = authorInput.value;
+    const pagesValue = pagesInput.value;
+    const readStatusValue = readStatusInput.checked;
+
+    addBookToLibrary(titleValue, authorValue, pagesValue, readStatusValue);
+    form.reset();
 })

@@ -13,17 +13,21 @@
         <p></p>
         <div id="form"></div>
         <table>
-            <thead>
-                <tr>
-                    <th>Book Title</th>
-                    <th>Author</th>
-                    <th>Pages</th>
-                    <th>Read Status</th>
-                </tr>
-            </thead>
-            <tbody id = "library">
-                
-            </tbody>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Book Title</th>
+                        <th>Author</th>
+                        <th>Pages</th>
+                        <th>Read Status</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id = "library">
+                </tbody>
+            </table>
+
         </table>
     </div>
 
@@ -44,10 +48,30 @@
             <label for="readStatus">Read Status:</label> <br>
             <input type="checkbox" id="readStatus" name="readStatus"> <br>
 
-            <button>OK</button>
+            <button type="submit" form="dialog" value="submit">OK</button>
         </form>
     </dialog>
 
+    <dialog id="editDialogue">
+        <p>Edit Your Book.</p>
+        <form method="dialog" id="editDialog">
+            <label for="title">Title:</label> <br>
+            <input type="text" id="editTitle" name="title"> <br>
+
+            <label for="author">Author:</label> <br>
+            <input type="text" id="editAuthor" name="author"> <br>
+
+
+            <label for="pages">Pages:</label> <br>
+            <input type="text" id="editPages" name="pages"> <br>
+
+            <label for="readStatus">Read Status:</label> <br>
+            <input type="checkbox" id="editReadStatus" name="readStatus"> <br>
+
+            <button type="submit" form="editDialog" value="submit">OK</button>
+        </form>
+    </dialog>
+      
     <p>
         <button id="showDialogue">Add Book</button>
     </p>
@@ -55,6 +79,8 @@
 
     <script src="test.js"></script>
     <script src="dialogue.js"></script>
+    <script src="edit.js"></script>
+
 
 </body>
 </html>
