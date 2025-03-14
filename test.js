@@ -98,35 +98,66 @@ function addDeleteEvent(i){
 }
 
 function addEditEvent(i){
-    const dialogueButton = document.getElementById("editDialogue");
-
     i.addEventListener('click', (e) => {
         const infoNode = i.parentNode.parentNode;
         const titlePlaceholder = document.getElementById("editTitle");
         const authorPlaceholder = document.getElementById("editAuthor");
         const pagesPlaceholder = document.getElementById("editPages");
         const readStatusPlaceholder = document.getElementById("editReadStatus");
-
+    
         const currTitle = infoNode.querySelector('.title').textContent;
         const currAuthor = infoNode.querySelector('.author').textContent;
         const currPages = infoNode.querySelector('.pages').textContent;
         const currReadStatus = infoNode.querySelector('.readStatus').textContent;
-
+    
         titlePlaceholder.setAttribute("value", currTitle);
         titlePlaceholder.setAttribute("onfocus", "this.selectionStart = this.selectionEnd = this.value.length;");
-
+    
         
         authorPlaceholder.setAttribute("value", currAuthor);
         authorPlaceholder.setAttribute("onfocus", "this.selectionStart = this.selectionEnd = this.value.length;");
-
+    
         
         pagesPlaceholder.setAttribute("value", currPages);
         pagesPlaceholder.setAttribute("onfocus", "this.selectionStart = this.selectionEnd = this.value.length;");
-
-        readStatusPlaceholder.setAttribute("checked", currReadStatus);
-        readStatusPlaceholder.setAttribute("onfocus", "this.selectionStart = this.selectionEnd = this.value.length;");
-
-        dialogueButton.showModal();
+        
+        if (currReadStatus == "true"){
+            readStatusPlaceholder.setAttribute("checked", currReadStatus);
+        }
+        else {
+            readStatusPlaceholder.removeAttribute("checked");
+        }
+        
+        editHTML(infoNode)
+    
     })
+
+
 }
 
+function editHTML(infoNode) {
+
+    const dialogueButton = document.getElementById("editDialogue");
+    dialogueButton.showModal();
+    const editForm = document.getElementById("editFormDialog");
+
+    editForm.addEventListener('submit', (e) => {
+        const titleInput = document.getElementById('editTitle');
+        const authorInput = document.getElementById('editAuthor');
+        const pagesInput = document.getElementById('editPages');
+        const readStatusInput = document.getElementById('editReadStatus');
+
+        const titleValue = titleInput.value;
+        const authorValue = authorInput.value;
+        const pagesValue = pagesInput.value;
+        const readStatusValue = readStatusInput.checked;
+
+        infoNode.querySelector('.title').textContent = titleValue;
+        infoNode.querySelector('.author').textContent = authorValue;
+        infoNode.querySelector('.pages').textContent = pagesValue;
+        infoNode.querySelector('.readStatus').textContent = readStatusValue;
+
+        editForm.reset();
+    }, { once: true })
+
+}
